@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" viewBox="0 0 700 700">
+  <defs>
+    <linearGradient id="gA" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#00e0d6"></stop>
+      <stop offset="100%" stop-color="#1eaaff"></stop>
+    </linearGradient>
+    <linearGradient id="gB" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+      <stop offset="100%" stop-color="#bffcf3" stop-opacity="0.95"></stop>
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#020617" flood-opacity="0.35"></feDropShadow>
+    </filter>
+  </defs>
+
+  <rect width="700" height="700" rx="48" fill="transparent"></rect>
+
+  <!-- circular badge -->
+  <g transform="translate(350,300)" filter="url(#shadow)">
+    <circle r="150" fill="url(#gA)"></circle>
+    <g transform="scale(0.9)">
+      <!-- orbit lines -->
+      <g stroke="white" stroke-opacity="0.9" fill="none" stroke-width="3">
+        <ellipse rx="155" ry="60"></ellipse>
+        <ellipse rx="60" ry="155" transform="rotate(60)"></ellipse>
+      </g>
+      <circle cx="-12" cy="26" r="9" fill="white"></circle>
+    </g>
+  </g>
+
+  <!-- stacked text below -->
+  <g transform="translate(350,520)" text-anchor="middle">
+    <text font-family="Inter, Roboto, Arial, sans-serif" font-weight="800" font-size="46" fill="url(#gB)">Hack<tspan fill="#00b8f0">Qubit</tspan></text>
+    <text font-family="Inter, Roboto, Arial, sans-serif" font-size="14" fill="#9ab3bf" y="26">Quantum-flavored security &amp; tooling</text>
+  </g>
+</svg>

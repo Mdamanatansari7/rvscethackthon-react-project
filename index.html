@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="/RVS_Logo.webp" href="/RVS_Logo.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hack Qubit Hackathon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#0a0a23',
+              'secondary': '#1b1b32',
+              'accent': '#00f5ff',
+              'highlight': '#ff00ff',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Roboto Mono', 'monospace'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+              'word-fade-in': 'word-fade-in 0.6s ease-out forwards',
+              'twinkle': 'twinkle 4s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(-3%)' },
+                '50%': { transform: 'translateY(3%)' },
+              },
+              'fade-in-up': {
+                '0%': {
+                  opacity: '0',
+                  transform: 'translateY(20px)',
+                },
+                '100%': {
+                  opacity: '1',
+                  transform: 'translateY(0)',
+                },
+              },
+              'word-fade-in': {
+                '0%': {
+                  opacity: '0',
+                  transform: 'translateY(15px)',
+                },
+                '100%': {
+                  opacity: '1',
+                  transform: 'translateY(0)',
+                },
+              },
+              twinkle: {
+                '0%, 100%': { opacity: '0.2', transform: 'scale(0.8)' },
+                '50%': { opacity: '1', transform: 'scale(1.1)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      .bg-dotted-pattern {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 0);
+        background-size: 40px 40px;
+      }
+      .bubbles-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        z-index: -5; 
+      }
+      .bubble {
+        position: absolute;
+        bottom: -200px; /* Start below the viewport */
+        background-color: rgba(0, 245, 255, 0.25); /* Light blue with transparency */
+        border-radius: 50%;
+        animation: float-up linear infinite;
+        box-shadow: 0 0 15px rgba(0, 245, 255, 0.3), 0 0 30px rgba(0, 245, 255, 0.25);
+        filter: blur(2px);
+      }
+      @keyframes float-up {
+        0% {
+          transform: translateY(0) translateX(0vw);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(-60vh) translateX(5vw);
+        }
+        100% {
+          transform: translateY(-120vh) translateX(-5vw);
+          opacity: 0;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.4",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.3.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.3.19",
+    "lenis": "https://aistudiocdn.com/lenis@^1.1.6"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-primary text-gray-200 font-sans bg-dotted-pattern">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
